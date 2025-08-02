@@ -54,19 +54,19 @@ Key Features
     
     v.Data persistence (simulated with in-memory storage or file system)
 
-5.Technical Implementation
-
-The application is structured with these main components:
-
-  i.ATM Class: Main controller that orchestrates the application flow
-  
-  ii.Account Classes: Base Account class with derived SavingsAccount and CurrentAccount classes
-  
-  iii.Transaction Classes: Handles different transaction types with proper validation
-  
-  iv.User Interface: Console-based menu system with clear prompts
-  
-  v.Exception Classes: Custom exceptions for domain-specific error cases
+   5.Technical Implementation
+   
+      The application is structured with these main components:
+      
+        i.ATM Class: Main controller that orchestrates the application flow
+        
+        ii.Account Classes: Base Account class with derived SavingsAccount and CurrentAccount classes
+        
+        iii.Transaction Classes: Handles different transaction types with proper validation
+        
+        iv.User Interface: Console-based menu system with clear prompts
+        
+        v.Exception Classes: Custom exceptions for domain-specific error cases
 
 6.Learning Outcomes
 
