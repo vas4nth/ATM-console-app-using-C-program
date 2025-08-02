@@ -68,18 +68,18 @@ Key Features
         
         v.Exception Classes: Custom exceptions for domain-specific error cases
 
-6.Learning Outcomes
-
-Through this project, we've demonstrated:
-
-  i.Proper application of OOP principles in a real-world scenario
-  
-  ii.Effective exception handling strategies
-  
-  iii.Clean code practices with proper modularization
-  
-  iv.User input validation techniques
-  
-  v.State management in a console application
+   6.Learning Outcomes
+   
+      Through this project, we've demonstrated:
+      
+        i.Proper application of OOP principles in a real-world scenario
+        
+        ii.Effective exception handling strategies
+        
+        iii.Clean code practices with proper modularization
+        
+        iv.User input validation techniques
+        
+        v.State management in a console application
 
 The application serves as a comprehensive example of how to build a robust, maintainable console application in C# while following software engineering best practices.
