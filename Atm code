@@ -1,0 +1,196 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace statements.atmtasks
+{
+
+
+    class Acct
+    {
+        public virtual void ACinfo()
+        {
+            Console.WriteLine("Name: Vasanth");
+            Console.WriteLine("Account number: **** *** **8 1324");
+            Console.WriteLine("Enter IFSC code:*** *** *898");
+            Console.WriteLine("Current acct: Saving");
+        }
+    }
+
+    class Balance : Acct
+    {
+        public override void ACinfo()
+        {
+            base.ACinfo();
+        }
+
+        public static int x = 10000;
+
+        public virtual void Balancee()
+        {
+
+            Console.WriteLine("balance is :" + x);
+        }
+    }
+
+    class Depo : Balance
+    {
+        public override void Balancee()
+        {
+            base.Balancee();
+        }
+        public virtual void Depos()
+        {
+            Console.WriteLine("Enter amount to Deposit");
+            int b = int.Parse(Console.ReadLine());
+            x += b;
+            Console.WriteLine("current Balance amount : " + x);
+            //return x;
+        }
+    }
+
+    class With : Depo
+    {
+        public override void Depos()
+        {
+            base.Depos();
+        }
+        public virtual void Wd()
+        {
+            Console.WriteLine("Enter amount to withdraw");
+            int c = int.Parse(Console.ReadLine());
+            x -= c;
+            Console.WriteLine("current Balance amount : " + x);
+            //return x;
+        }
+    }
+
+    class Exxit : With
+    {
+        public override void Wd()
+        {
+            base.Wd();
+        }
+        public void Exit()
+        {
+
+            Console.WriteLine("Thank you visit again!");
+        }
+    }
+
+    internal class expection
+    {
+
+        static void Main(string[] args)
+        {
+            try
+            {
+                Exxit Et = new Exxit();
+                int passw = 12345;
+                int i = 1;
+                int c = 1;
+
+                while (i <= 3)
+                {
+                    Console.WriteLine("Enter password");
+                    int pass = int.Parse(Console.ReadLine());
+                    if (pass == passw)
+                    {
+                        Console.WriteLine("Login successfull");
+                        while (c == 1)
+                        {
+                            Console.WriteLine("pls press below button for needed enquiry");
+
+
+                            Console.WriteLine(" Enter 1 for acct info \n" +
+                                "Enter 2 for Balance inquiry \n " +
+                                "Enter deposit \n " +
+                                "Enter 4 to withdraw \n " +
+                                "Enter 5 toExit");
+
+
+                            int choice = int.Parse(Console.ReadLine());
+                            switch (choice)
+                            {
+                                case 1:
+                                    Et.ACinfo();
+                                    Console.WriteLine("Do you want to continue : Yes 1 No 2");
+                                    c = int.Parse(Console.ReadLine());
+                                    if (c == 2)
+                                    {
+                                        Console.WriteLine("Thanks pls take ur card back");
+                                        return;
+                                    }
+                                    break;
+                                case 2:
+                                    Et.Balancee();
+                                    Console.WriteLine("Do you want to continue : Yes 1 No 2");
+                                    c = int.Parse(Console.ReadLine());
+                                    if (c == 2)
+                                    {
+                                        Console.WriteLine("Thanks pls take ur card back");
+
+
+
+                                        return;
+                                    }
+                                    break;
+                                case 3:
+                                    Et.Depos();
+                                    Console.WriteLine("Do you want to  : Yes 1 No 2");
+                                    c = int.Parse(Console.ReadLine());
+                                    if (c == 2)
+                                    {
+                                        Console.WriteLine("Thanks pls take ur card back");
+                                        return;
+                                    }
+                                    break;
+                                case 4:
+                                    Et.Wd();
+                                    Console.WriteLine("Do you want to continue : Yes 1 No 2");
+                                    c = int.Parse(Console.ReadLine());
+                                    if (c == 2)
+                                    {
+                                        Console.WriteLine("Thanks pls take ur card back");
+                                        return;
+                                    }
+                                    break;
+                                case 5:
+                                    Et.Exit();
+                                    break;
+                                default:
+                                    Console.WriteLine("invalid input");
+                                    break;
+                            }
+                            i++;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("incorrect password"); i++;
+                    }
+                    if (i > 3)
+                    {
+                        Console.WriteLine("today limit exceeded try later");
+                    }
+                }
+
+            }
+            catch(FormatException ex1)
+            {
+                Console.WriteLine(ex1.Message);
+            }
+            catch (Exception ex2)
+            {
+                Console.WriteLine(ex2.Message);
+            }
+            finally
+            {
+                Console.WriteLine("The finally the execution");
+            }
+        }
+    }
+
+}
